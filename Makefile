@@ -4,6 +4,9 @@ CXX = g++
 # コンパイラオプション
 CXXFLAGS = -Wall -Wextra -std=c++17
 
+# Boost ヘッダーファイルへのパス
+BOOST_INCLUDE = /path/to/boost
+
 # メインのソースファイル
 SOURCE = main.cpp
 
@@ -22,7 +25,10 @@ $(EXECUTABLE): $(OBJECT)
 
 # オブジェクトファイルのビルド
 bin/main.o: $(SOURCE)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(BOOST_INCLUDE) -c $< -o $@
+
+# graph: graph.dot
+# 	dot -Tsvg graph.dot > graph.svg
 
 # 'make clean' の定義
 clean:
