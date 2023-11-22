@@ -1,6 +1,5 @@
 make
-
 `bear -- make`
 
-dotfileの可視化
+.dot → svg
 `dot -Tsvg graph.dot > graph.svg`

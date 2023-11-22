@@ -27,9 +27,5 @@ $(EXECUTABLE): $(OBJECT)
 bin/main.o: $(SOURCE)
 	$(CXX) $(CXXFLAGS) -I$(BOOST_INCLUDE) -c $< -o $@
 
-# graph: graph.dot
-# 	dot -Tsvg graph.dot > graph.svg
-
-# 'make clean' の定義
 clean:
 	rm -f $(OBJECT) $(EXECUTABLE)
